@@ -1,6 +1,9 @@
 ---
 dependency:
   name: galaxy
+  options:
+    role-file: meta/requirements.yml
+    force: true
 
 driver:
   name: docker
