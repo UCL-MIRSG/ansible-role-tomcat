@@ -76,7 +76,7 @@
     group: "{{ tomcat.group }}"
     mode: 0644
     force: true
-  notify: restart tomcat
+  notify: Restart tomcat
 
 - name: Start and enable tomcat
   ansible.builtin.service:
@@ -94,7 +94,7 @@
     group: "{{ tomcat.group }}"
     mode: 0644
     force: true
-  notify: restart tomcat
+  notify: Restart tomcat
 
 - name: Copy Tomcat server config file
   ansible.builtin.template:
@@ -104,4 +104,4 @@
     group: "{{ tomcat.group }}"
     mode: 0644
     force: true
-  notify: restart tomcat
+  notify: Restart tomcat

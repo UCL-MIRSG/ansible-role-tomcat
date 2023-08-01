@@ -65,7 +65,7 @@
   when:
     - "tomcat_check.stat.exists"
     - "pipeline_installer_folder.stat.exists"
-  notify: restart tomcat
+  notify: Restart tomcat
 
 - name: "Restore previously installed apps and files"
   ansible.builtin.copy:
@@ -78,7 +78,7 @@
   loop: "{{ items_to_restore }}"
 
   when: "tomcat_check.stat.exists"
-  notify: restart tomcat
+  notify: Restart tomcat
 
 - name: Show suggested commands for removing backed-up Tomcat folder
   ansible.builtin.debug:
