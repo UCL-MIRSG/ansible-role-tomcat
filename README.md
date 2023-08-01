@@ -1,10 +1,8 @@
-Ansible Role: mirsg.tomcat
-=========
+# Ansible Role: mirsg.tomcat
 
 A role for installing and configuring Apache Tomcat.
 
-Role Variables
---------------
+## Role Variables
 
 `tomcat_version`: The version of Tomcat to install. Defaults to `9.0.76`
 
@@ -49,8 +47,8 @@ tomcat_webapp_name }}".
 
 ```yaml
 "https://archive.apache.org/dist/tomcat/tomcat-\
-    {{ tomcat_version.split('.')[0] }}/v{{ tomcat_version }}/bin/\
-    apache-tomcat-{{ tomcat_version }}.tar.gz"
+{{ tomcat_version.split('.')[0] }}/v{{ tomcat_version }}/bin/\
+apache-tomcat-{{ tomcat_version }}.tar.gz"
 ```
 
 `items_to_restore`: A list containing the following items to be restored after
@@ -63,8 +61,7 @@ an upgrade. Defaults to:
 - "/usr/share/tomcat_bkp/install_downloads"
 ```
 
-Example Playbook
-----------------
+## Example Playbook
 
 Including an example of how to use your role (for instance, with variables
 passed in as parameters) is always nice for users too:
@@ -72,16 +69,14 @@ passed in as parameters) is always nice for users too:
 ```yaml
 - hosts: servers
   roles:
-     - { role: mirsg.tomcat }
+    - { role: mirsg.tomcat }
 ```
 
-License
--------
+## License
 
 BSD
 
-Author Information
-------------------
+## Author Information
 
 This role was created by the [Medical Imaging Research Software
 Group](https://www.ucl.ac.uk/advanced-research-computing/expertise/research-software-development/medical-imaging-research-software-group)
