@@ -4,6 +4,20 @@ A role for installing and configuring Apache Tomcat.
 
 ## Role Variables
 
+`selinux_enabled`: Specify whether `selinux` is enabled on the host. Defaults to
+`false`.
+
+`java_home`: Path to java installation. Defaults to "/usr/lib/jvm/jre".
+
+`java_mem`: Java memory settings. Defaults to:
+
+```yaml
+java_mem:
+  Xms: 4G
+  Xmx: 5G
+  MetaspaceSize: 300M
+```
+
 `tomcat_version`: The version of Tomcat to install. Defaults to `9.0.76`
 
 `tomcat_webapp_name`: The name of the root web app. Defaults to "ROOT".
@@ -60,6 +74,10 @@ an upgrade. Defaults to:
 - "/usr/share/tomcat_bkp/logs"
 - "/usr/share/tomcat_bkp/install_downloads"
 ```
+
+## Dependencies
+
+This role depends on `mirsg.java`.
 
 ## Example Playbook
 

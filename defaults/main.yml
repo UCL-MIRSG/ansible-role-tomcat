@@ -1,16 +1,25 @@
 ---
 # defaults file for tomcat
+selinux_enabled: false
+
+java_home: /usr/lib/jvm/jre
+
+java_mem:
+  Xms: 4G
+  Xmx: 5G
+  MetaspaceSize: 300M
+
 tomcat_version: 9.0.76
 
-tomcat_webapp_name: "ROOT"
+tomcat_webapp_name: ROOT
 
 tomcat:
-  catalina_home: "/usr/share/tomcat"
-  config_file: "/usr/share/tomcat/conf/tomcat.conf"
-  server_config_file: "/usr/share/tomcat/conf/server.xml"
-  service_config_file: "/etc/systemd/system/tomcat.service"
-  owner: "tomcat"
-  group: "tomcat"
+  catalina_home: /usr/share/tomcat
+  config_file: /usr/share/tomcat/conf/tomcat.conf
+  server_config_file: /usr/share/tomcat/conf/server.xml
+  service_config_file: /etc/systemd/system/tomcat.service
+  owner: tomcat
+  group: tomcat
   hostname: localhost
   server_port: 8005
   catalina_port: 8983
@@ -24,7 +33,7 @@ tomcat:
     apache-tomcat-{{ tomcat_version }}.tar.gz"
 
 items_to_restore:
-  - "/usr/share/tomcat_bkp/webapps"
-  - "/usr/share/tomcat_bkp/.postgresql"
-  - "/usr/share/tomcat_bkp/logs"
-  - "/usr/share/tomcat_bkp/install_downloads"
+  - /usr/share/tomcat_bkp/webapps
+  - /usr/share/tomcat_bkp/.postgresql
+  - /usr/share/tomcat_bkp/logs
+  - /usr/share/tomcat_bkp/install_downloads
