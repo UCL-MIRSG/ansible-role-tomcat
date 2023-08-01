@@ -65,7 +65,7 @@
   ansible.builtin.template:
     src: templates/tomcat.service.j2
     dest: "{{ tomcat.service_config_file }}"
-    mode: 0644
+    mode: "0644"
   when: ansible_service_mgr == "systemd"
 
 - name: Copy Tomcat config file
@@ -74,7 +74,7 @@
     dest: "{{ tomcat.config_file }}"
     owner: "{{ tomcat.owner }}"
     group: "{{ tomcat.group }}"
-    mode: 0644
+    mode: "0644"
     force: true
   notify: Restart tomcat
 
@@ -92,7 +92,7 @@
     dest: "{{ tomcat.catalina_home }}/bin/setenv.sh"
     owner: "{{ tomcat.owner }}"
     group: "{{ tomcat.group }}"
-    mode: 0644
+    mode: "0644"
     force: true
   notify: Restart tomcat
 
@@ -102,6 +102,6 @@
     dest: "{{ tomcat.server_config_file }}"
     owner: "{{ tomcat.owner }}"
     group: "{{ tomcat.group }}"
-    mode: 0644
+    mode: "0644"
     force: true
   notify: Restart tomcat
