@@ -8,15 +8,6 @@ dependency:
 driver:
   name: docker
 
-scenario:
-  name: rocky8
-  test_sequence:
-    - destroy
-    - syntax
-    - create
-    - converge
-    - destroy
-
 platforms:
   - name: instance
     image: rockylinux:8
