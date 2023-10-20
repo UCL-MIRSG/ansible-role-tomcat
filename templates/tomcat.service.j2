@@ -5,16 +5,16 @@ After=syslog.target network.target
 [Service]
 Type=forking
 
-User={{ tomcat.owner }}
-Group={{ tomcat.owner }}
+User={{ tomcat_owner }}
+Group={{ tomcat_group }}
 
-EnvironmentFile={{ tomcat.config_file }}
+EnvironmentFile={{ tomcat_config_file }}
 
-Environment=CATALINA_BASE={{ tomcat.catalina_home }}
-Environment=CATALINA_PID={{ tomcat.catalina_home }}/temp/tomcat.pid
+Environment=CATALINA_BASE={{ tomcat_catalina_home }}
+Environment=CATALINA_PID={{ tomcat_catalina_home }}/temp/tomcat_pid
 
-ExecStart={{ tomcat.catalina_home }}/bin/catalina.sh start
-ExecStop={{ tomcat.catalina_home }}/bin/catalina.sh stop
+ExecStart={{ tomcat_catalina_home }}/bin/catalina.sh start
+ExecStop={{ tomcat_catalina_home }}/bin/catalina.sh stop
 
 [Install]
 WantedBy=multi-user.target

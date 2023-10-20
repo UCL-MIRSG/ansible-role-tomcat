@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<Server port="{{ tomcat.shutdown_port }}" shutdown="SHUTDOWN">
+<Server port="{{ tomcat_shutdown_port }}" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
   <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
   {% if tomcat_version.split('.')[0] == "7" %}
@@ -18,7 +18,7 @@
   </GlobalNamingResources>
 
   <Service name="Catalina">
-    <Connector port="{{ tomcat.port }}" protocol="HTTP/1.1"
+    <Connector port="{{ tomcat_port }}" protocol="HTTP/1.1"
                connectionTimeout="20000" />
     <Engine name="Catalina" defaultHost="localhost">
       <Realm className="org.apache.catalina.realm.LockOutRealm">
@@ -32,7 +32,7 @@
                pattern="%h %l %u %t &quot;%r&quot; %s %b" />
 
           {% if tomcat_webapp_name != "ROOT" %}
-            <Context path="" docBase="{{ tomcat.root }}"/>
+            <Context path="" docBase="{{ tomcat_root }}"/>
           {% endif %}
       </Host>
     </Engine>
