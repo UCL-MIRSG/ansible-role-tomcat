@@ -1,8 +1,10 @@
 ---
-# defaults file for tomcat
+# defaults for mirsg.tomcat
 selinux_enabled: false
 
 java_home: /usr/lib/jvm/jre
+java_profile_d: "/etc/profile.d"
+java_package: "java-1.8.0-openjdk-devel"
 
 java_mem:
   Xms: 4G
@@ -10,7 +12,6 @@ java_mem:
   MetaspaceSize: 300M
 
 tomcat_version: 9.0.76
-
 tomcat_webapp_name: ROOT
 
 tomcat:
