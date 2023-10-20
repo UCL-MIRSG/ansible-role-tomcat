@@ -54,7 +54,7 @@
     path: "{{ tomcat_backup_directory }}/pipeline_installer"
   register: pipeline_installer_folder
 
-- name: "Restore pipeline installer if it exists"
+- name: Restore pipeline installer if it exists
   ansible.builtin.copy:
     src: "{{ tomcat_backup_directory }}/pipeline_installer"
     dest: "{{ tomcat_catalina_home }}"
