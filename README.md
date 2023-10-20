@@ -93,7 +93,7 @@ an upgrade. Defaults to:
 
 ## Dependencies
 
-This role has no dependencies.
+This role depends on `community.general` for the `community.general.seport` module.
 
 ## Example Playbook
 
