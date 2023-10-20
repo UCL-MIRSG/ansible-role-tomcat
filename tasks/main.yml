@@ -117,3 +117,14 @@
     mode: "0644"
     force: true
   notify: Restart tomcat
+
+- name: Noop to restart tomcat
+  tags: restart
+  block:
+    - name: Trigger restart tomcat
+      ansible.builtin.debug:
+        msg: "trigger restart tomcat"
+      notify: restart tomcat
+      changed_when: false
+    - name: Force handler to run now
+      ansible.builtin.meta: flush_handlers
