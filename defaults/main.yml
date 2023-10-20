@@ -13,6 +13,7 @@ java_mem:
 
 tomcat_version: 9.0.76
 tomcat_webapp_name: ROOT
+tomcat_catalina_opts: "-Xms4G -Xmx6G -XX:MetaspaceSize=300M -XX:+UseG1GC -server"
 
 tomcat:
   catalina_home: /usr/share/tomcat
