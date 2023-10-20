@@ -22,7 +22,7 @@
     state: directory
     owner: "{{ tomcat.owner }}"
     group: "{{ tomcat.group }}"
-    mode: 0644
+    mode: "0755"
 
 - name: Download and unarchive Tomcat v{{ tomcat_version }}
   ansible.builtin.unarchive:
