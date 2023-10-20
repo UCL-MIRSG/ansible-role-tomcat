@@ -35,6 +35,4 @@ tomcat:
 
 items_to_restore:
   - /usr/share/tomcat_bkp/webapps
-  - /usr/share/tomcat_bkp/.postgresql
   - /usr/share/tomcat_bkp/logs
-  - /usr/share/tomcat_bkp/install_downloads
