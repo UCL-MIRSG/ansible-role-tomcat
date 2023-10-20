@@ -6,7 +6,7 @@
 
   pre_tasks:
     - name: Wait for systemd to complete initialization.
-      ansible.builtin.command: systemctl is-system-running
+      ansible.builtin.command: systemctl is-system-running # noqa: command-instead-of-module
       register: systemctl_status
       until: >
         'running' in systemctl_status.stdout or
@@ -15,7 +15,7 @@
       delay: 5
       when: ansible_service_mgr == 'systemd'
       changed_when: false
-      failed_when: systemctl_status.rc > 1
+      failed_when: systemctl_status.rc > 0
 
   roles:
     - role: mirsg.tomcat
