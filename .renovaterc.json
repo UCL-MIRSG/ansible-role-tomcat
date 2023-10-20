@@ -1,4 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>UCL-MIRSG/.github//renovate/default-config.json"]
+  "extends": ["github>UCL-MIRSG/.github//renovate/default-config.json"],
+  "packageRules": [
+    {
+      "description": "Check Maven Central for updates to Tomcat 9",
+      "matchPackageNames": ["org.apache.tomcat:tomcat"],
+      "allowedVersions": "<10"
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update Tomcat version specified in defaults/main.yml",
+      "fileMatch": ["defaults/main.yml$"],
+      "matchStrings": ["tomcat_version:\\s?(?<currentValue>.*?)\\n"],
+      "depNameTemplate": "org.apache.tomcat:tomcat",
+      "datasourceTemplate": "maven"
+    }
+  ]
 }
