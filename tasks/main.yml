@@ -3,13 +3,13 @@
   ansible.builtin.yum:
     name: ["libselinux-python", "policycoreutils-python"]
     state: installed
-  when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "7"
+  when: ansible_facts['os_family'] == 'RedHat' and ansible_facts['distribution_major_version'] is version('7')
 
 - name: Ensure Ansible seport dependencies are installed
   ansible.builtin.yum:
     name: ["python3-libselinux", "policycoreutils-python-utils"]
     state: installed
-  when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "8"
+  when: ansible_facts['os_family'] == "RedHat" and ansible_facts['distribution_major_version'] is version("8", ">=")
 
 - name: Ensure epel is installed
   ansible.builtin.yum:
