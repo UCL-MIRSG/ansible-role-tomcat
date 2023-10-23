@@ -1,4 +1,4 @@
-name: Manage issues on the projects board
+name: Add issue to project
 
 on:
   issues:

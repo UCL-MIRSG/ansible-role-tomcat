@@ -23,10 +23,10 @@ TOMCATS_BASE="/var/lib/tomcats/"
 JAVA_HOME="{{ java_home }}"
 
 # Where your tomcat installation lives
-CATALINA_HOME="{{ tomcat.catalina_home }}"
+CATALINA_HOME="{{ tomcat_catalina_home }}"
 
 # System-wide tmp
-CATALINA_TMPDIR="{{ tomcat.catalina_home }}/temp"
+CATALINA_TMPDIR="{{ tomcat_catalina_home }}/temp"
 
 # You can pass some parameters to java here if you wish to
 # If the parameters are only for tomcat, in most cases it is sufficient to
