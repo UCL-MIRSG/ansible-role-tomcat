@@ -9,7 +9,15 @@ driver:
   name: docker
 
 platforms:
-  - name: instance
+  - name: tomcat9
+    image: rockylinux:8
+    command: ""
+    cgroupns_mode: host
+    privileged: true
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+
+  - name: tomcat10
     image: rockylinux:8
     command: ""
     cgroupns_mode: host
@@ -23,6 +31,9 @@ provisioner:
   config_options:
     defaults:
       callbacks_enabled: profile_tasks, timer, yaml
+  inventory:
+    links:
+      host_vars: ../resources/inventory/host_vars/
   playbooks:
     converge: ../resources/converge.yml
   env:

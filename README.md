@@ -19,7 +19,7 @@ A role for installing and configuring Apache Tomcat.
 
 ### Tomcat general settings
 
-`tomcat_version`: The version of Tomcat to install. Defaults to `9.0.76`
+`tomcat_version`: The version of Tomcat to install. Defaults to the latest release of version 9.
 
 `tomcat_owner`: The OS user that has ownership of Tomcat. Defaults to "tomcat".
 

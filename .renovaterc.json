@@ -5,14 +5,14 @@
     {
       "description": "Check Maven Central for updates to Tomcat 9",
       "matchPackageNames": ["org.apache.tomcat:tomcat"],
-      "allowedVersions": "<10"
+      "matchUpdateTypes": ["minor", "patch"]
     }
   ],
   "customManagers": [
     {
       "customType": "regex",
-      "description": "Update Tomcat version specified in defaults/main.yml",
-      "fileMatch": ["defaults/main.yml$"],
+      "description": "Update Tomcat version",
+      "fileMatch": ["defaults/main.yml$", "(^|/)*tomcat*.yml$"],
       "matchStrings": ["tomcat_version:\\s?(?<currentValue>.*?)\\n"],
       "depNameTemplate": "org.apache.tomcat:tomcat",
       "datasourceTemplate": "maven"
