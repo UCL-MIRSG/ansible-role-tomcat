@@ -13,9 +13,9 @@ A role for installing and configuring Apache Tomcat.
 
 `java_home`: Path to java installation. Defaults to "/usr/lib/jvm/jre".
 
-`java_profile_d`: Defaults to "/etc/profile.d".
+`java_profile_d`: Directory in which to put a script for setting java home. Defaults to "/etc/profile.d".
 
-`java_package`: Defaults to "java-1.8.0-openjdk-devel"
+`java_package`: Name of the Java package to install. Defaults to "java-1.8.0-openjdk-devel"
 
 ### Tomcat general settings
 

@@ -1,2 +1,3 @@
 ---
+java_package: "java-11-openjdk-devel"
 tomcat_version: 10.1.15
