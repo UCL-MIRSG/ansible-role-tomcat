@@ -31,7 +31,8 @@ runs:
       if: github.event.inputs.external_requirements == ''
       shell: bash
       run: |
-        ansible-galaxy install -r "${{ inputs.external_requirements }}"
+        ansible-galaxy collection install -r "${{ inputs.external_requirements }}"
+        ansible-galaxy role install -r "${{ inputs.external_requirements }}"
     - name: Test with molecule
       shell: bash
       run: molecule test --scenario-name  "${{ inputs.scenario }}"
