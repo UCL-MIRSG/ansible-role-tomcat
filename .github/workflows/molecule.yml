@@ -18,8 +18,6 @@ jobs:
       PY_COLORS: 1
       ANSIBLE_FORCE_COLOR: 1
     steps:
-      - name: Install Ansible requirements
-        run: ansible-galaxy
       - name: Run `molecule test`
         uses: .github/actions/molecule-test
         with:
