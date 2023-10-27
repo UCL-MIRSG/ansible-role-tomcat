@@ -93,7 +93,9 @@ an upgrade. Defaults to:
 
 ## Dependencies
 
-This role depends on `community.general` for the `community.general.seport` module.
+You will need to install the following collections before using `mirsg.tomcat`:
+
+- `community.general`
 
 ## Example Playbook
 
