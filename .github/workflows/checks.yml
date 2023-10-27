@@ -13,5 +13,5 @@ jobs:
     steps:
       - uses: UCL-MIRSG/.github/actions/linting@v0.30.0
         with:
-          ansible-roles-config: ./meta/external_requirements.yml
+          ansible-roles-config: ./meta/collections.yml
           pre-commit-config: ./.pre-commit-config.yaml
