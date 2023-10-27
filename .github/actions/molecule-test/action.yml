@@ -27,6 +27,9 @@ runs:
         sudo apt-get update && sudo apt-get -y install rsync
         python3 -m pip install --upgrade pip
         python3 -m pip install ansible molecule molecule-plugins[docker] docker requests
+    - run: |
+        echo "external_requirements: ${{ github.event.inputs.external_requirements }}"
+      shell: bash
     - name: Install additional ansible requirements
       if: github.event.inputs.external_requirements == ''
       shell: bash
