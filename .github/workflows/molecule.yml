@@ -21,7 +21,7 @@ jobs:
       - name: Install Ansible requirements
         run: ansible-galaxy
       - name: Run `molecule test`
-        uses: UCL-MIRSG/.github/actions/molecule-test@v0.26.0
+        uses: .github/actions/molecule-test
         with:
           external_requirements: ./meta/external_requirements.yml
           scenario: ${{ matrix.molecule_scenario }}
