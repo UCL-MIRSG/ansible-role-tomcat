@@ -18,6 +18,22 @@ jobs:
       PY_COLORS: 1
       ANSIBLE_FORCE_COLOR: 1
     steps:
+      - name: Check out the codebase
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+      - name: Install test dependencies
+        shell: bash
+        run: |
+          sudo apt-get update && sudo apt-get -y install rsync
+          python3 -m pip install --upgrade pip
+          python3 -m pip install ansible molecule molecule-plugins[docker] docker requests
+      - name: Install additional ansible requirements
+        shell: bash
+        run: |
+          ansible-galaxy install -r ./meta/external_requirements.yml
       - name: Run `molecule test`
         uses: .github/actions/molecule-test
         with:
