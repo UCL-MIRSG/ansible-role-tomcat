@@ -35,7 +35,7 @@ jobs:
         run: |
           ansible-galaxy install -r ./meta/external_requirements.yml
       - name: Run `molecule test`
-        uses: .github/actions/molecule-test@v0.26.0
+        uses: UCL-MIRSG/.github/actions/molecule-test@v0.26.0
         with:
           external_requirements: ./meta/external_requirements.yml
           scenario: ${{ matrix.molecule_scenario }}
