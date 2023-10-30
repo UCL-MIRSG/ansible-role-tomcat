@@ -2,7 +2,7 @@
 dependency:
   name: galaxy
   options:
-    role-file: meta/requirements.yml
+    requirements-file: meta/collections.yml
     force: true
 
 driver:
